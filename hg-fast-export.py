@@ -190,7 +190,7 @@ def export_commit(ui,repo,revision,old_marks,max,count,authors,
       return brmap[name]
     n=sanitize_name(name, "branch", branchesmap)
     brmap[name]=n
-    return n
+    return n.lstrip('/')
 
   (revnode,_,user,(time,timezone),files,desc,branch,_)=get_changeset(ui,repo,revision,authors,encoding)
 
